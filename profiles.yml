@@ -1,0 +1,21 @@
+jaffle_shop: # this needs to match the profile in your dbt_project.yml file
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      keyfile: /Users/SW/Downloads/true-river-394113-52c48c4db9a0.json # replace this with the full path to your keyfile
+      project: true-river-394113 # Replace this with your project id
+      dataset: dbt_csw24 # Replace this with dbt_your_name, e.g. dbt_bilbo
+      threads: 1
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+
+
+      git init
+      git branch -M main
+      git add .
+      git commit -m "Create a dbt project"
+      git remote add origin https://github.com/csw24csw24/dbt-tutorial.git
+      git push -u origin main
